@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Anki Automation Tool",
+  "description": "Injects a panel into Cambridge Dictionary pages for Anki cards.",
+  "version": "2.0",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "host_permissions": ["https://dictionary.cambridge.org/*"],
+  "action": {
+    "default_icon": "assets/icons/icon.png",
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://dictionary.cambridge.org/*"],
+      "js": [
+        "src/config.js",
+        "src/ui/popup.js",
+        "src/utils/button.js",
+        "src/utils/translations.js",
+        "src/utils/anki.js",
+        "src/utils/images.js",
+        "src/dictionaries/base_handler.js",
+        "src/dictionaries/cambridge_handler.js",
+        "src/core/card.js",
+        "src/core/content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/ui/styles.css",
+        "src/ui/popup.html" 
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "service_worker": "src/core/background.js"
+  }
+}

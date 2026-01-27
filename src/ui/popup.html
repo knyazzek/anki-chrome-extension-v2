@@ -1,0 +1,34 @@
+<div id="anki-extension-root" class="anki-panel-hidden anki-panel-no-transition">
+  <div id="anki-extension-tab">Anki</div>
+  <div id="anki-extension-panel">
+    <label>Keyword</label>
+    <input id="anki-keyword" />
+
+    <label>Image</label>
+    <input id="anki-img" placeholder="Image link" />
+
+    <label>Definition</label>
+    <textarea id="anki-definition" rows="4"></textarea>
+
+    <label>Examples</label>
+    <textarea id="anki-examples" rows="4" placeholder="- examples"></textarea>
+
+    <label>Transcription & Pronunciation</label>
+    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+      <div style="flex: 1; display: flex; flex-direction: column;">
+        <span style="font-size: 13px; color: #555; margin-bottom: 2px;">Transcription</span>
+        <input id="anki-transcription" />
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column;">
+        <span style="font-size: 13px; color: #555; margin-bottom: 2px;">Pronunciation</span>
+        <input id="anki-sound" />
+      </div>
+    </div>
+
+    <label>Russian</label>
+    <div id="anki-russian-suggestions"></div>
+    <input id="anki-russian" />
+
+    <button id="submit-anki">Add to Anki</button>
+  </div>
+</div>
