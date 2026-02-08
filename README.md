@@ -69,15 +69,15 @@ Make sure that:
 - The deck name exists in Anki, or Anki is allowed to create it automatically.
 - The note type name in `ANKI_MODEL_NAME` exactly matches the model name in Anki.
 
-### 5. Check this out
+## 5. Check this out
 
 Go [here](https://dictionary.cambridge.org/us/dictionary/english/sexy). You should see plus buttons added to the page.
 
-#### `Mode: Card`
+### `Mode: Card`
 
 Default mode. Click on the `Anki` button on the right side. Try to add definition, exemples, sound ... and then click `Add to Anki`. Once it's done you should see `Card added to Anki` messege.
 
-#### `Mode: Copy`
+### `Mode: Copy`
 
 When you click on the buttoms they copy value to the clipboard.
 
