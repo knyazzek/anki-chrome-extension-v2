@@ -40,17 +40,7 @@ class Card {
     }
 
     set translation(value) {
-        let currentValue = this.translation
-        
-        if (currentValue.includes(value)) {
-            this._translation = this._translation.replace(value + ", ", "");
-            this._translation = this._translation.replace(", " + value, "");
-            this._translation = this._translation.replace(value, "");
-        } else if (currentValue) {
-            this._translation = currentValue + ", " + value
-        } else {
-            this._translation = value
-        }
+        this._translation = value || ""
     }   
 
     set image(value) {

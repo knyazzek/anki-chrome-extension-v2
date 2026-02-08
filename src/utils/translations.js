@@ -33,7 +33,15 @@ function injectSuggestionButtons(card, suggestions, container) {
     btn.textContent = suggestion;
     btn.style.marginRight = "6px";
     btn.onclick = () => {
-      card.translation = suggestion;
+      const current = card.translation;
+      const parts = current ? current.split(/\s*,\s*/).filter(Boolean) : [];
+      const idx = parts.indexOf(suggestion);
+      if (idx >= 0) {
+        parts.splice(idx, 1);
+      } else {
+        parts.push(suggestion);
+      }
+      card.translation = parts.join(", ");
       card.on_update_callback();
     };
     container.appendChild(btn);
