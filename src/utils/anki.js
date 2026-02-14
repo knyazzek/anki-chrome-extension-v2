@@ -6,7 +6,11 @@ async function saveCardToAnki(card) {
       Keyword: card.word,
       IMG: card.image,
       Definition: card.definition,
-      Example: card.examples,
+      Example: (function() {
+        const raw = (card.examples || "").trim();
+        if (!raw) return "";
+        return raw.replace(/\n/g, '<br>').replace(/(?:<br>)+$/,'');
+      })(),
       Transcription: card.transcription,
       Sound: card.audioUrl,
       Russian: card.translation
